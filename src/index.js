@@ -28,12 +28,12 @@ function renderContent(renderTabContents) {
 
   const mainDiv = renderTabContents();
   content.appendChild(mainDiv);
-  // for (const child of children) {
-  //   content.appendChild(child);
-  // }
 }
 
 addButtonHandler("aboutTab", renderAbout);
 addButtonHandler("contactTab", renderContact);
 addButtonHandler("homeTab", renderHome);
 addButtonHandler("menuTab", renderMenu);
+
+const defaultTabButton = document.querySelector("#homeTab");
+defaultTabButton.dispatchEvent(new Event("click"));

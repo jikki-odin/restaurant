@@ -1,5 +1,28 @@
 #aboutContent {
   p {
-    padding: 24px 0px;
+    padding: 18px;
+  }
+
+  .background {
+    margin-bottom: 24px;
+    padding: 12px;
+
+    background-color: var(--bg-tertiary);
+  }
+
+  .hours {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    padding: 18px;
+
+    background-color: var(--bg-tertiary);
+
+    ul {
+      list-style: none;
+    }
   }
 }

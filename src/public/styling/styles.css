@@ -94,5 +94,7 @@ div#content {
   margin-top: 0;
   padding: 24px;
 
+  font-size: large;
+
   background-color: var(--bg-secondary);
 }
