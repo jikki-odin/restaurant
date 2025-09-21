@@ -1,3 +1,5 @@
+import "../public/styling/contact.css";
+
 const content = {
   mainParagraph:
     "Look, you already know what I'm gonna say here. Do not contact me. Do not give this information out. Leave me in peace, I beg you.",
@@ -14,11 +16,12 @@ const content = {
 };
 
 export default function render() {
-  const children = [];
+  const mainDiv = document.createElement("div");
+  mainDiv.id = "contactContent";
 
   const mainParagraph = document.createElement("p");
   mainParagraph.textContent = content.mainParagraph;
-  children.push(mainParagraph);
+  mainDiv.appendChild(mainParagraph);
 
   const addressDiv = document.createElement("div");
 
@@ -32,19 +35,19 @@ export default function render() {
     addressDiv.appendChild(paragraph);
   }
 
-  children.push(addressDiv);
+  mainDiv.appendChild(addressDiv);
 
   const phoneNumber = document.createElement("p");
   phoneNumber.textContent = `Phone: ${content.phone}`;
-  children.push(phoneNumber);
+  mainDiv.appendChild(phoneNumber);
 
   const email = document.createElement("p");
   email.textContent = `Email: ${content.email}`;
-  children.push(email);
+  mainDiv.appendChild(email);
 
   const fax = document.createElement("p");
   fax.textContent = `Fax: ${content.fax}`;
-  children.push(fax);
+  mainDiv.appendChild(fax);
 
-  return children;
+  return mainDiv;
 }

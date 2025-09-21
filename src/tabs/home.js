@@ -1,3 +1,5 @@
+import "../public/styling/home.css";
+
 const content = {
   mainParagraph:
     "Who are you? What are you doing here? Listen, I don't want any trouble; I just want to be left alone. Especially if you're here asking questions about Ba-ado Mishram.",
@@ -6,15 +8,16 @@ const content = {
 };
 
 export default function render() {
-  const children = [];
+  const mainDiv = document.createElement("div");
+  mainDiv.id = "homeContent";
 
   const mainParagraph = document.createElement("p");
   mainParagraph.textContent = content.mainParagraph;
-  children.push(mainParagraph);
+  mainDiv.appendChild(mainParagraph);
 
   const subParagraph = document.createElement("p");
   subParagraph.textContent = content.subParagraph;
-  children.push(subParagraph);
+  mainDiv.appendChild(subParagraph);
 
-  return children;
+  return mainDiv;
 }

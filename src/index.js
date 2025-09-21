@@ -26,10 +26,11 @@ function renderContent(renderTabContents) {
 
   content.replaceChildren();
 
-  const children = renderTabContents();
-  for (const child of children) {
-    content.appendChild(child);
-  }
+  const mainDiv = renderTabContents();
+  content.appendChild(mainDiv);
+  // for (const child of children) {
+  //   content.appendChild(child);
+  // }
 }
 
 addButtonHandler("aboutTab", renderAbout);

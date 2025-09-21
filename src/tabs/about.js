@@ -1,3 +1,5 @@
+import "../public/styling/about.css";
+
 const content = {
   background: {
     paragraphs: [
@@ -48,12 +50,13 @@ const content = {
 };
 
 export default function render() {
-  const children = [];
+  const mainDiv = document.createElement("div");
+  mainDiv.id = "aboutContent";
 
   for (const line of content.background.paragraphs) {
     const paragraph = document.createElement("p");
     paragraph.textContent = line;
-    children.push(paragraph);
+    mainDiv.appendChild(paragraph);
   }
 
   const hoursDiv = document.createElement("div");
@@ -77,7 +80,7 @@ export default function render() {
   }
 
   hoursDiv.appendChild(hoursList);
-  children.push(hoursDiv);
+  mainDiv.appendChild(hoursDiv);
 
-  return children;
+  return mainDiv;
 }
