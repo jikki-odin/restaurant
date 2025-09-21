@@ -1,3 +1,4 @@
+import "./public/styling/styles.css";
 import {
   renderAbout,
   renderContact,
