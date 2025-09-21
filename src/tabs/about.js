@@ -1,3 +1,5 @@
+import "../public/styling/about.css";
+
 const content = {
   background: {
     paragraphs: [
@@ -48,13 +50,19 @@ const content = {
 };
 
 export default function render() {
-  const children = [];
+  const mainDiv = document.createElement("div");
+  mainDiv.id = "aboutContent";
+
+  const backgroundDiv = document.createElement("div");
+  backgroundDiv.classList.add("background");
 
   for (const line of content.background.paragraphs) {
     const paragraph = document.createElement("p");
     paragraph.textContent = line;
-    children.push(paragraph);
+    backgroundDiv.appendChild(paragraph);
   }
+
+  mainDiv.appendChild(backgroundDiv);
 
   const hoursDiv = document.createElement("div");
   hoursDiv.classList.add("hours");
@@ -66,6 +74,7 @@ export default function render() {
   const hoursList = document.createElement("ul");
   hoursDiv.classList.add("hours");
 
+  // TODO: make this a table or otherwise more standard format
   for (const entry of content.hours) {
     const listItem = document.createElement("li");
 
@@ -77,7 +86,7 @@ export default function render() {
   }
 
   hoursDiv.appendChild(hoursList);
-  children.push(hoursDiv);
+  mainDiv.appendChild(hoursDiv);
 
-  return children;
+  return mainDiv;
 }

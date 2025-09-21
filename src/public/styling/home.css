@@ -1,0 +1,7 @@
+#homeContent {
+  background-color: var(--bg-tertiary);
+
+  p {
+    padding: 18px;
+  }
+}

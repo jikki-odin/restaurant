@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Background Colors */
+  --bg-primary: #0f0f0f; /* Main background - very dark */
+  --bg-secondary: #1a1a1a; /* Card/section backgrounds */
+  --bg-tertiary: #262626; /* Elevated elements, modals */
+  --bg-hover: #333333; /* Hover states */
+
+  /* Text Colors */
+  --text-primary: #ffffff; /* Main text */
+  --text-secondary: #b3b3b3; /* Secondary text, labels */
+  --text-muted: #808080;
+
+  /* Blue Accent Colors */
+  --blue-50: #eff6ff;
+  --blue-100: #dbeafe;
+  --blue-200: #bfdbfe;
+  --blue-300: #93c5fd;
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6; /* Primary blue */
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --blue-800: #1e40af;
+  --blue-900: #1e3a8a;
+
+  /* Primary Accent Aliases */
+  --accent-primary: var(--blue-500);
+  --accent-primary-hover: var(--blue-600);
+  --accent-primary-active: var(--blue-700);
+  --accent-primary-light: var(--blue-100);
+  --accent-primary-dark: var(--blue-800);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  padding: 0px 24px;
+
+  .tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+
+    padding: 24px;
+    margin: 1px;
+  }
+
+  .tab.active {
+    background-color: var(--accent-primary);
+  }
+
+  button {
+    font-size: xx-large;
+
+    padding: 8px 16px;
+    border: 2px solid var(--accent-primary);
+
+    background-color: var(--bg-tertiary);
+    color: var(--accent-primary);
+  }
+
+  button:hover {
+    background-color: var(--bg-hover);
+  }
+
+  button:active {
+    border: 2px solid var(--accent-primary-hover);
+  }
+}
+
+div#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+
+  margin: 24px;
+  margin-top: 0;
+  padding: 24px;
+
+  font-size: large;
+
+  background-color: var(--bg-secondary);
+}

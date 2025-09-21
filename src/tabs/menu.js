@@ -1,3 +1,5 @@
+import "../public/styling/menu.css";
+
 const content = {
   mainParagraph:
     "This Restar-aunt is strictly BYOB (Bring Your Own Broams). Prices below reflect this policy. Soulcasting is optional.",
@@ -26,15 +28,16 @@ const content = {
 };
 
 export default function render() {
-  const children = [];
+  const mainDiv = document.createElement("div");
+  mainDiv.classList.add("main");
 
   const mainParagraph = document.createElement("p");
   mainParagraph.textContent = content.mainParagraph;
-  children.push(mainParagraph);
+  mainDiv.appendChild(mainParagraph);
 
   for (const { name, description, price } of content.menuItems) {
     const menuItem = document.createElement("div");
-    menuItem.classList.add("menu-item");
+    mainDiv.id = "menuContent";
 
     const nameHeading = document.createElement("h2");
     nameHeading.classList.add("name");
@@ -51,8 +54,8 @@ export default function render() {
     priceLine.textContent = price;
     menuItem.appendChild(priceLine);
 
-    children.push(menuItem);
+    mainDiv.appendChild(menuItem);
   }
 
-  return children;
+  return mainDiv;
 }
