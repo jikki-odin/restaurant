@@ -48,12 +48,27 @@ nav {
   justify-content: space-evenly;
   align-items: center;
 
+  padding: 0px 24px;
+
+  .tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+
+    padding: 24px;
+    margin: 1px;
+  }
+
+  .tab.active {
+    background-color: var(--accent-primary);
+  }
+
   button {
     font-size: xx-large;
 
     padding: 8px 16px;
-    margin-top: 24px;
-    border: 2px solid var(--bg-primary);
+    border: 2px solid var(--accent-primary);
 
     background-color: var(--bg-tertiary);
     color: var(--accent-primary);
@@ -76,6 +91,7 @@ div#content {
   gap: 24px;
 
   margin: 24px;
+  margin-top: 0;
   padding: 24px;
 
   background-color: var(--bg-secondary);

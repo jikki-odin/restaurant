@@ -8,7 +8,17 @@ import {
 
 function addButtonHandler(buttonId, renderer) {
   const button = document.querySelector(`#${buttonId}`);
-  button.addEventListener("click", () => renderContent(renderer));
+  button.addEventListener("click", (event) => {
+    const prevTab = document.querySelector(".tab.active");
+    if (!!prevTab) {
+      prevTab.classList.remove("active");
+    }
+
+    const clickedTab = event.target.parentElement;
+    clickedTab.classList.add("active");
+
+    renderContent(renderer);
+  });
 }
 
 function renderContent(renderTabContents) {
