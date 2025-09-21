@@ -1,5 +1,24 @@
-#contactContent {
-  p {
-    padding: 24px 0px;
+.contact-info {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 24px;
+
+  padding-bottom: 24px;
+
+  background-color: var(--bg-tertiary);
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h2 {
+    padding: 12px;
+  }
+
+  .address-lines {
+    color: var(--text-secondary);
   }
 }
