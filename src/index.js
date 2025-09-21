@@ -1,28 +1,14 @@
-import renderHome from "./home.js";
-import renderAbout from "./about.js";
-import renderMenu from "./menu.js";
-import renderContact from "./contact.js";
+import {
+  renderAbout,
+  renderContact,
+  renderHome,
+  renderMenu,
+} from "./tabs/index.js";
 
-const homeTab = document.querySelector("#homeTab");
-const aboutTab = document.querySelector("#aboutTab");
-const menuTab = document.querySelector("#menuTab");
-const contactTab = document.querySelector("#contactTab");
-
-homeTab.addEventListener("click", () => {
-  renderContent(renderHome);
-});
-
-aboutTab.addEventListener("click", () => {
-  renderContent(renderAbout);
-});
-
-menuTab.addEventListener("click", () => {
-  renderContent(renderMenu);
-});
-
-contactTab.addEventListener("click", () => {
-  renderContent(renderContact);
-});
+function addButtonHandler(buttonId, renderer) {
+  const button = document.querySelector(`#${buttonId}`);
+  button.addEventListener("click", () => renderContent(renderer));
+}
 
 function renderContent(renderTabContents) {
   const content = document.querySelector("#content");
@@ -35,4 +21,7 @@ function renderContent(renderTabContents) {
   }
 }
 
-console.log("Ayy lmao");
+addButtonHandler("aboutTab", renderAbout);
+addButtonHandler("contactTab", renderContact);
+addButtonHandler("homeTab", renderHome);
+addButtonHandler("menuTab", renderMenu);
