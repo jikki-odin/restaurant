@@ -5,7 +5,7 @@ const content = {
     paragraphs: [
       "Why are you looking here? Why'd you click on this? What business is it of yours? I'm nobody. I'm worthless. You're better off not knowing.",
       "Fine. If you must know, my name isn't Restares. That's what those fool Sons of Honor call me. My real name is Kalak, known in Vorinism as Kelek'Elin, Herald of the Almighty.",
-      "I came here on the run from the Ghostbloods. They want to kill me, I think, though I don't know how they'd manage it. Regardless, I know things they'd like to learn, and I'd rather they didn't get it out of me.",
+      "I came here on the run from the Ghostbloods. They want to kill me, I think, though I don't know how they'd manage it. Regardless, I know things they'd like to learn, and I'd rather they didn't get them out of me.",
       "Now please, go back to your table and stop asking me so many questions.",
     ],
   },

@@ -29,33 +29,44 @@ const content = {
 
 export default function render() {
   const mainDiv = document.createElement("div");
-  mainDiv.classList.add("main");
+  mainDiv.id = "menuContent";
 
   const mainParagraph = document.createElement("p");
+  mainParagraph.classList.add("preamble");
   mainParagraph.textContent = content.mainParagraph;
   mainDiv.appendChild(mainParagraph);
 
+  const menuList = document.createElement("div");
+  menuList.classList.add("menu-items");
+
   for (const { name, description, price } of content.menuItems) {
     const menuItem = document.createElement("div");
-    mainDiv.id = "menuContent";
+    menuItem.classList.add("menu-item");
+
+    const menuItemInfo = document.createElement("div");
+    menuItemInfo.classList.add("item-left");
 
     const nameHeading = document.createElement("h2");
     nameHeading.classList.add("name");
     nameHeading.textContent = name;
-    menuItem.appendChild(nameHeading);
+    menuItemInfo.appendChild(nameHeading);
 
     const descriptionParagraph = document.createElement("p");
     descriptionParagraph.classList.add("description");
     descriptionParagraph.textContent = description;
-    menuItem.appendChild(descriptionParagraph);
+    menuItemInfo.appendChild(descriptionParagraph);
+
+    menuItem.appendChild(menuItemInfo);
 
     const priceLine = document.createElement("div");
     priceLine.classList.add("price");
     priceLine.textContent = price;
     menuItem.appendChild(priceLine);
 
-    mainDiv.appendChild(menuItem);
+    menuList.appendChild(menuItem);
   }
+
+  mainDiv.appendChild(menuList);
 
   return mainDiv;
 }

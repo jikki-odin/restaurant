@@ -1,5 +1,25 @@
-#menuContent {
-  p {
-    padding: 24px 0px;
-  }
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 24px;
+
+  background-color: var(--bg-tertiary);
+}
+
+.item-left .description {
+  font-style: italic;
+
+  color: var(--text-secondary);
+}
+
+.price {
+  color: var(--text-muted);
 }

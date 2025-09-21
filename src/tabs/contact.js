@@ -20,34 +20,49 @@ export default function render() {
   mainDiv.id = "contactContent";
 
   const mainParagraph = document.createElement("p");
+  mainParagraph.classList.add("preamble");
   mainParagraph.textContent = content.mainParagraph;
   mainDiv.appendChild(mainParagraph);
 
+  const contactSection = document.createElement("div");
+  contactSection.classList.add("contact-info");
+
   const addressDiv = document.createElement("div");
+  addressDiv.classList.add("address");
 
   const addressHeading = document.createElement("h2");
   addressHeading.textContent = "Address";
   addressDiv.appendChild(addressHeading);
 
+  const addressContentDiv = document.createElement("div");
+  addressContentDiv.classList.add("address-lines");
+
   for (const line of content.address.lines) {
     const paragraph = document.createElement("p");
     paragraph.textContent = line;
-    addressDiv.appendChild(paragraph);
+    addressContentDiv.appendChild(paragraph);
   }
 
-  mainDiv.appendChild(addressDiv);
+  addressDiv.appendChild(addressContentDiv);
+  contactSection.appendChild(addressDiv);
+
+  const secondaryContacts = document.createElement("div");
+  secondaryContacts.classList.add("secondary-contacts");
 
   const phoneNumber = document.createElement("p");
   phoneNumber.textContent = `Phone: ${content.phone}`;
-  mainDiv.appendChild(phoneNumber);
+  secondaryContacts.appendChild(phoneNumber);
 
   const email = document.createElement("p");
   email.textContent = `Email: ${content.email}`;
-  mainDiv.appendChild(email);
+  secondaryContacts.appendChild(email);
 
   const fax = document.createElement("p");
   fax.textContent = `Fax: ${content.fax}`;
-  mainDiv.appendChild(fax);
+  secondaryContacts.appendChild(fax);
+
+  contactSection.appendChild(secondaryContacts);
+  mainDiv.appendChild(contactSection);
 
   return mainDiv;
 }
