@@ -60,18 +60,19 @@ nav {
     margin: 1px;
   }
 
-  .tab.active {
-    background-color: var(--accent-primary);
-  }
-
   button {
     font-size: xx-large;
 
     padding: 8px 16px;
     border: 2px solid var(--accent-primary);
+    border-radius: 32px;
 
     background-color: var(--bg-tertiary);
     color: var(--accent-primary);
+  }
+
+  button.active-tab {
+    box-shadow: 0 0 40px var(--accent-primary);
   }
 
   button:hover {
