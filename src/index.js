@@ -9,18 +9,10 @@ import {
 function addButtonHandler(buttonId, renderer) {
   const button = document.querySelector(`#${buttonId}`);
   button.addEventListener("click", (event) => {
-    // const prevTab = document.querySelector(".tab.active");
-    // if (!!prevTab) {
-    //   prevTab.classList.remove("active");
-    // }
-
     const prevButton = document.querySelector("button.active-tab");
     if (!!prevButton) {
       prevButton.classList.remove("active-tab");
     }
-
-    // const clickedTab = event.target.parentElement;
-    // clickedTab.classList.add("active");
 
     const clickedButton = event.target;
     clickedButton.classList.add("active-tab");
